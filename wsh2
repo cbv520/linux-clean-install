@@ -33,14 +33,13 @@ mv xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/ &&
 xfconf-query --create -c xfce4-desktop -p /desktop-icons/style -t int -s '0' &&
 
 sudo mv terminal.desktop /usr/share/applications/ &&
-mv mouse.desktop ~/.config/autostart &&
+mkdir ~/.config/autostart && 
+mv bspwm_login.desktop ~/.config/autostart &&
 
 #disable error messages
 echo "enabled=0" > /etc/default/apport &&
 
 #set defualt window manager
-echo "sxhkd & exec bspwm " > ~/.xinitrc &&
-chmod +x ~/.xinitrc &&
 xfconf-query --create -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa bspwm &&
 xfconf-query --create -c xfce4-session -p /general/SaveOnExit -t bool -s false &&
 rm -rf ~/.cache/sessions/* &&
