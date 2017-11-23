@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #programs
-sudo apt install git scrot -y xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev &&
+sudo apt install rofi git scrot -y xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev &&
 
 #bspwm setup
 git clone https://github.com/baskerville/bspwm.git  &&
@@ -25,21 +25,18 @@ xfconf-query -c xfce4-notifyd -p /theme -s "Victory-16.10" &&
 #xfce settings
 mv xfce4-panel.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/ &&
 mv xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/ &&
+xfconf-query -c xfce4-desktop -p /desktop-icons/style -t 'int' -s '0'
 
-mv terminal.desktop /usr/share/applications/ &&
+sudo mv terminal.desktop /usr/share/applications/ &&
 
 #disable error messages
 echo "enabled=0" > /etc/default/apport &&
 
 #set defualt window manager
-echo "sxhkd & exec bspwm" > ~/.xinitrc &&
+echo "sxhkd & exec bspwm & xsetroot -cursor_name left_ptr" > ~/.xinitrc &&
 chmod +x ~/.xinitrc &&
 xfconf-query  -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa bspwm &&
 xfconf-query -t bool -c xfce4-session -p /general/SaveOnExit -s false &&
-rm ~/.cache/sessions/* &&
+rm -rf ~/.cache/sessions/* &&
 
-sh ~/.config/bspwm/bspwmrc &&
-pkill -USR1 -x sxhkd &&
-
-notify-send "Setup Finished" --icon=dialog-information
-
+reboot
