@@ -23,9 +23,9 @@ chmod +x ~/.config/bspwm/bspwmrc &&
 git clone https://github.com/newhoa/victory-gtk-theme.git ~/.themes/ &&
 git clone https://github.com/newhoa/victory-icon-theme.git ~/.icons/victory-icon-theme/ &&
 mv ~/.themes/PreviousVersions/Victory-16.10 ~/.themes &&
-xfconf-query --create -c xsettings -p /Net/ThemeName -s "Victory-16.10" &&
-xfconf-query --create -c xsettings -p /Net/IconThemeName -s "victory-icon-theme" &&
-xfconf-query --create -c xfce4-notifyd -p /theme -s "Victory-16.10" &&
+xfconf-query -c xsettings -p /Net/ThemeName -s "Victory-16.10" &&
+xfconf-query -c xsettings -p /Net/IconThemeName -s "victory-icon-theme" &&
+xfconf-query -c xfce4-notifyd -p /theme -s "Victory-16.10" &&
 
 #xfce settings
 mv xfce4-panel.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/ &&
