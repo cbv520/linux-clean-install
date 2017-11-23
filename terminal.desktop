@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Terminal
+Exec=sh -c "xfce4-terminal --hide-menubar"
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=System
