@@ -25,7 +25,7 @@ xfconf-query -c xfce4-notifyd -p /theme -s "Victory-16.10" &&
 #xfce settings
 mv xfce4-panel.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/ &&
 mv xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/ &&
-xfconf-query -c xfce4-desktop -p /desktop-icons/style -t 'int' -s '0'
+xfconf-query -c xfce4-desktop -p /desktop-icons/style -t 'int' -s '0' &&
 
 sudo mv terminal.desktop /usr/share/applications/ &&
 
@@ -36,7 +36,7 @@ echo "enabled=0" > /etc/default/apport &&
 echo "sxhkd & exec bspwm & xsetroot -cursor_name left_ptr" > ~/.xinitrc &&
 chmod +x ~/.xinitrc &&
 xfconf-query  -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa bspwm &&
-xfconf-query -t bool -c xfce4-session -p /general/SaveOnExit -s false &&
+xfconf-query --create -t bool -c xfce4-session -p /general/SaveOnExit -s false &&
 rm -rf ~/.cache/sessions/* &&
 
 reboot
