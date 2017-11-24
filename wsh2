@@ -31,6 +31,11 @@ xfconf-query --create -c xfce4-notifyd -p /theme -t string -s "Victory-16.10" &&
 mv xfce4-panel.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/ &&
 mv xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/ &&
 xfconf-query --create -c xfce4-desktop -p /desktop-icons/style -t int -s '0' &&
+xfconf-query --create -c xfwm4 -p /general/workspace_names [-4] \
+	-t string -s 1 \
+	-t string -s 2 \
+	-t string -s 3 \
+	-t string -s 4 \
 
 sudo mv terminal.desktop /usr/share/applications/ &&
 mkdir ~/.config/autostart && 
@@ -45,6 +50,4 @@ xfconf-query --create -c xfce4-session -p /sessions/Failsafe/Client0_Command -t 
 xfconf-query --create -c xfce4-session -p /general/SaveOnExit -t bool -s false &&
 rm -rf ~/.cache/sessions/* &&
 
-bash ~/.config/bspwm/bspwmrc &&
-pkill -USR1 -x sxhkd &&
 reboot
