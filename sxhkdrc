@@ -47,7 +47,7 @@ super + space
 
 #web search
 super + Return
-	sh ~/.config/sxhkd/search.sh
+	bash ~/.config/sxhkd/search.sh
 
 # make sxhkd reload its configuration files:
 super + F5
