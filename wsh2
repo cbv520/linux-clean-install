@@ -16,10 +16,8 @@ make -C sxhkd/ && sudo make install -C sxhkd/ &&
 rm -rf bspwm/ sxhkd/ &&
 mkdir ~/.config/sxhkd/ && mv sxhkdrc search.sh ~/.config/sxhkd/ &&
 chmod +x ~/.config/sxhkd/search.sh &&
-pkill -USR1 -x sxhkd &&
 mkdir ~/.config/bspwm/ && mv bspwmrc ~/.config/bspwm &&
 chmod +x ~/.config/bspwm/bspwmrc &&
-bash ~/.config/bspwm/bspwmrc &&
 
 #theme setup
 git clone https://github.com/newhoa/victory-gtk-theme.git ~/.themes/ &&
@@ -47,4 +45,6 @@ xfconf-query --create -c xfce4-session -p /sessions/Failsafe/Client0_Command -t 
 xfconf-query --create -c xfce4-session -p /general/SaveOnExit -t bool -s false &&
 rm -rf ~/.cache/sessions/* &&
 
+bash ~/.config/bspwm/bspwmrc &&
+pkill -USR1 -x sxhkd &&
 reboot
