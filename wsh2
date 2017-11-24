@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 #programs
-sudo apt install rofi git scrot -y xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev &&
+sudo apt install wmctrl rofi git scrot -y xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev &&
 
 #bspwm setup
 git clone https://github.com/baskerville/bspwm.git  &&
