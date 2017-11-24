@@ -18,6 +18,7 @@ mkdir ~/.config/sxhkd/ && mv sxhkdrc search.sh ~/.config/sxhkd/ &&
 chmod +x ~/.config/sxhkd/search.sh &&
 mkdir ~/.config/bspwm/ && mv bspwmrc ~/.config/bspwm &&
 chmod +x ~/.config/bspwm/bspwmrc &&
+bash ~/.config/bspwm/bspwmrc &&
 
 #theme setup
 git clone https://github.com/newhoa/victory-gtk-theme.git ~/.themes/ &&
