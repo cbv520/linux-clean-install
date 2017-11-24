@@ -35,6 +35,7 @@ xfconf-query --create -c xfce4-desktop -p /desktop-icons/style -t int -s '0' &&
 sudo mv terminal.desktop /usr/share/applications/ &&
 mkdir ~/.config/autostart && 
 mv bspwm_login.desktop ~/.config/autostart &&
+mv mouse.desktop ~/.config/autostart &&
 
 #disable error messages
 echo "enabled=0" > /etc/default/apport &&
