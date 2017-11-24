@@ -28,7 +28,7 @@ super + {e,t}
 	xfce4-terminal --hide-menubar
 
 # close window
-ctrl + {w,q}
+ctrl + q
 	bspc node --close
 super + {w,q}
 	bspc node --close
