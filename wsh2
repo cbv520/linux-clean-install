@@ -35,7 +35,7 @@ xfconf-query --create -c xfwm4 -p /general/workspace_names [-4] \
 	-t string -s 1 \
 	-t string -s 2 \
 	-t string -s 3 \
-	-t string -s 4 \
+	-t string -s 4
 
 sudo mv terminal.desktop /usr/share/applications/ &&
 mkdir ~/.config/autostart && 
