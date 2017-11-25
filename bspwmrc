@@ -2,7 +2,7 @@
 
 sxhkd &
 
-bspc monitor -d web dev files media
+bspc monitor -d 1 2 3 4
 
 bspc config pointer_modifier control
 bspc config pointer_action1 resize_corner
