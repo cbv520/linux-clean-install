@@ -37,7 +37,11 @@ xfconf-query --create -c xfwm4 -p /general/workspace_names [-4] \
 	-t string -s 3 \
 	-t string -s 4
 
-sudo mv terminal.desktop /usr/share/applications/ &&
+#xfce4-terminal settings 
+mkdir ~/.config/xfce4/terminal
+mv terminalrc ~/.config/xfce4/terminal
+
+#autostart programs
 mkdir ~/.config/autostart && 
 mv bspwm_login.desktop ~/.config/autostart &&
 mv mouse.desktop ~/.config/autostart &&
